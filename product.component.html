@@ -1,0 +1,45 @@
+
+<input type="text"  [(ngModel)]="s1" placeholder="Product Id" />
+<input type="text"  [(ngModel)]="s2" placeholder="Product Name" />
+<input type="text"  [(ngModel)]="s3" placeholder="Brand" />
+<input type="text"  [(ngModel)]="s4"  placeholder="Price"/>
+<input type="text"  [(ngModel)]="s5" placeholder="Quantity" />
+<br/>
+<input type="button" (click)="addProduct()"  value=" Add Product "/>
+<input type="button" (click)="editProduct()"  value=" Edit Product "/>
+<br/><br/>
+Sort By:
+        <a href="#" (click)="sortid()">Sort By Id</a><br/><br/>
+        <a href="#" (click)="sortbrand()">Sort By Brand</a><br/><br/>
+        <a href="#" (click)="sortprice()">Sort By Price</a><br/><br/>
+        <a href="#" (click)="sortname()">Sort By Name</a>
+<br/><br/>
+<table border="2">
+  <tr>
+    <th>pid</th>
+    <th>pname</th>
+    <th>brand</th>
+    <th>price</th>
+    <th>qty</th>
+    <th>remove</th>
+    <th>Select</th>
+
+  </tr>
+
+  <tr *ngFor="let item of product">
+      <td>{{item.pid}}</td>
+      <td>{{item.pname}}</td>
+      <td>{{item.brand}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.qty}}</td>
+      <td> 
+        <a href="#" (click)="removeProduct(item.pid)">Remove</a>  </td>
+      <td> <a href="#" (click)="selectProduct(item.pid)">Select</a> </td>  
+         
+
+      
+  </tr>
+
+</table>
+
+   
